@@ -11,9 +11,16 @@ const urlRouter = require("./router/url");
 dotenv.config();
 
 
-mongoose.connect(process.env.MONGODB_URLS, {useNewUrlParser: true, useUnifiedTopology: true,  useCreateIndex: true}, () => {
-    console.log("connected to mongodb");
-});
+mongoose.connect(process.env.MONGODB_URLS, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+})
+  .then(() => {
+    console.log('Connected to MongoDB');
+  })
+  .catch((error) => {
+    console.error('Failed to connect to MongoDB:', error);
+  });
 
 
 app.use(express.json());

@@ -1,5 +1,5 @@
 
-export const generateShortUrl = ()=>{
+ const generateShortUrl = ()=>{
  const characters = 'http://short.est/GeAi9K';
   const length = 7;
   let shortUrl = '';
@@ -10,4 +10,8 @@ export const generateShortUrl = ()=>{
   }
 
   return shortUrl;
+}
+
+module.exports ={
+    generateShortUrl
 }
