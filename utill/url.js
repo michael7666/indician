@@ -1,6 +1,6 @@
 
  const generateShortUrl = ()=>{
- const characters = 'http://short.est/GeAi9K';
+ const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
   const length = 7;
   let shortUrl = '';
 
