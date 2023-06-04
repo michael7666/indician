@@ -39,7 +39,8 @@ module.exports.getUrlById =async (req, res) => {
         const urlData = await Upload.findOne({ shortUrl });    
         if (urlData) {
           // Redirect to the long URL
-          res.redirect(urlData.longUrl);
+          //res.redirect(urlData.longUrl);
+          res.json(urlData.longUrl)
           // Update click count
           urlData.clickCount++;
           await urlData.save();
