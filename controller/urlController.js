@@ -38,7 +38,11 @@ module.exports.getUrlById =async (req, res) => {
         if (urlData) {
           // Redirect to the long URL
           //res.redirect(urlData.longUrl);
-          res.json(urlData.longUrl)
+          res.json(
+            {
+              urlData
+            }
+          )
           // Update click count
           urlData.clickCount++;
           await urlData.save();
