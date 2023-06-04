@@ -14,23 +14,22 @@ module.exports.createUrl =async (req, res) => {
     }
 }
 
-// module.exports.getUrl =async (req, res) => {
-//     const { shortUrl } = req.params;
-//     try {
-//         // Find the corresponding long URL in MongoDB
-//         const urlData = await Upload.findOne({ shortUrl });
+module.exports.getUrl =async (req, res) => {
+    const { shortUrl } = req.params;
+    try {
+        // Find the corresponding long URL in MongoDB
+        const urlData = await Upload.findOne({ shortUrl });
     
-//         if (urlData) {
-//           // Redirect to the long URL
-//           res.redirect(urlData.longUrl);
-//         } else {
-//           res.status(404).send('URL not found');
-//         }
-//       } catch (error) {
-//         console.error('Failed to retrieve URL mapping:', error);
-//         res.status(500).send('Failed to retrieve URL mapping');
-//       }
-// }
+        if (urlData) {
+          // Redirect to the long URL
+          res.redirect(urlData.longUrl);
+        } else {
+          res.status(404).send('URL not found');
+        }
+      } catch (error) {
+        res.status(500).send('Failed to retrieve URL mapping');
+      }
+}
 
 module.exports.getUrlById =async (req, res) => {
     const { shortUrl } = req.params;
