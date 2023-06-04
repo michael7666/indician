@@ -19,7 +19,6 @@ module.exports.getUrl =async (req, res) => {
     try {
         // Find the corresponding long URL in MongoDB
         const urlData = await Upload.findOne({ shortUrl });
-    
         if (urlData) {
           // Redirect to the long URL
           res.redirect(urlData.longUrl);
