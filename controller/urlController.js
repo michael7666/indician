@@ -1,6 +1,8 @@
 const Upload =  require("../model/Upload");
 const { generateShortUrl } = require("../utill/url");
 
+
+//encode
 module.exports.createUrl =async (req, res) => {
     const {longUrl} = req.body
     const shortUrl = generateShortUrl();
@@ -14,6 +16,7 @@ module.exports.createUrl =async (req, res) => {
     }
 }
 
+//Redirect the url
 module.exports.getUrl =async (req, res) => {
     const { shortUrl } = req.params;
     try {
@@ -30,6 +33,7 @@ module.exports.getUrl =async (req, res) => {
       }
 }
 
+//decode
 module.exports.getUrlById =async (req, res) => {
     const { shortUrl } = req.params;
     try {
@@ -54,6 +58,7 @@ module.exports.getUrlById =async (req, res) => {
       }
 }
 
+// stat
 module.exports.getUrlStat =async (req, res) => {
     const { shortUrl } = req.params;
 
