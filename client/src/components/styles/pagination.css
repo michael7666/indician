@@ -1,0 +1,13 @@
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 24px;
+  }
+  
+  .pagination-text {
+    padding: 12px 16px;
+    color: #6b46c1;
+    font-size: 16px;
+  }
